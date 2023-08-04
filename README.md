@@ -1,27 +1,21 @@
-# Chatgptutilities
+# ChatGPT Utilities by Zach Champeau
+This project was made for TylerTech's MI-24 2023 challenge. It is far from complete and there are bugs.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
+## TODO
+- OpenAI Login, it currently uses Zach's API Key.
 
-## Development server
+## FIRST STEPS (IMPORTANT)
+I am aware this method is not secure whatsoever, but I ran out of time during the 24 hour challenge. An OpenAI login will be implemented at some point.
+- Create an API key: https://platform.openai.com/account/api-keys
+- Open up the chat-gpt.service.ts file and replace the existing API Key.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Running the project
+- Use a command prompt and run `ng serve` in the project's root directory.
+- It'll give you a localhost url.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Code Masker (C# Only)
+- Enter a word prompt, give a nice description of what you want ChatGPT to do.
+- Enter your c# code in questions, include comments if necessary.
+- Hit auto mask if you want to mask your code.
+- Hit submit to generate the prompt and send it to ChatGPT.
+- On the rightmost card, you will see its' response and will be able to Auto Unmask it.
