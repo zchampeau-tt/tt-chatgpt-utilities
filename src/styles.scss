@@ -1,0 +1,12 @@
+@use '@tylertech/forge/styles/theme/theme-dark';
+@use '@tylertech/forge/dist/forge.css';
+@use '@tylertech/forge/dist/typography/forge-typography.css';
+
+:root {
+  @include theme-dark.theme-properties;
+}
+
+body {
+  margin: 0;
+  background-color: #212121;
+}

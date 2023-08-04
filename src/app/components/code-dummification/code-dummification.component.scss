@@ -1,0 +1,52 @@
+.cs-gpt-content {
+  display: flex;
+  flex-direction: row;
+  margin: 25px;
+  gap: 25px;
+  height: calc(100vh - 56px - 56px - 56px);
+}
+
+.cs-gpt-card {
+  width: 50%;
+  height: 100%; /* Set the height to 100% to fill the available vertical space */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  .margin {
+    margin-bottom: 10px;
+  }
+
+  .button {
+    --mdc-theme-primary: #00A67E;
+    --mdc-theme-on-primary: white;
+  }
+
+  .cs-gpt-text {
+    --mdc-theme-text-icon-on-background: #00A67E;
+    --mdc-theme-primary: #00A67E;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    code {
+      flex: 1;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      textarea {
+        flex: 1;
+        padding: 10px;
+        background: none;
+        outline: none;
+        resize: none;
+        border: none;
+        width: 100%;
+        height: 100%;
+        color: white;
+      }
+    }
+  }
+}

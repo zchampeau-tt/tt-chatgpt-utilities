@@ -1,0 +1,26 @@
+.cs-gpt-header {
+  --forge-app-bar-theme-background: #00A67E;
+  --height: 56px;
+
+  .logo {
+    width: var(--height);
+    height: var(--height);
+  }
+}
+
+.cs-gpt-container {
+  display: flex;
+  height: calc(100vh - 56px);
+
+  .drawer {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    --forge-list-padding: 5px;
+    --forge-drawer-width: 256px;
+  }
+
+  .content {
+    flex-grow: 1;
+  }
+}

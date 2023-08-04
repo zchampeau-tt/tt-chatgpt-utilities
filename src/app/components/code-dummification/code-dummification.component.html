@@ -1,0 +1,89 @@
+<forge-toolbar>
+  <span class="forge-typography--title"> Code Masker </span>
+</forge-toolbar>
+<div class="cs-gpt-content">
+  <forge-card class="cs-gpt-card">
+    <div class="margin">
+      <span class="forge-typography--body1"> Prompt Builder </span>
+    </div>
+    <div>
+      <span class="forge-typography--body2"> Word Portion </span>
+    </div>
+    <forge-text-field class="cs-gpt-text" required>
+      <input type="text" id="input-text-01" [(ngModel)]="inputPrompt" />
+      <label for="input-text-01" slot="label">Enter Prompt</label>
+    </forge-text-field>
+
+    <div>
+      <span class="forge-typography--body2"> Code Portion </span>
+    </div>
+    <forge-text-field class="cs-gpt-text" required>
+      <code style="margin-top: 20px">
+        <textarea id='input-code' [rows]="21" [(ngModel)]="inputCode"></textarea>
+      </code>
+      <label for='input-code' slot="label">Enter C#</label>
+    </forge-text-field>
+
+    <div style="display: flex">
+      <forge-button class='button' style="margin-left: auto;" [type]="'outline'" (click)="copy()">
+        <button type="button">Copy</button>
+      </forge-button>
+
+      <forge-button class='button' style="margin-left: 10px;" [type]="'outline'" (click)="paste()">
+        <button type="button">Paste</button>
+      </forge-button>
+
+      <forge-button class='button' style="margin-left: 10px;" [type]="'raised'" (click)="dummify()">
+        <button type="button">Auto Mask</button>
+      </forge-button>
+
+      <forge-button class='button' style="margin-left: 10px" [type]="'raised'" (click)="submit()">
+        <button type="button">Submit</button>
+      </forge-button>
+    </div>
+  </forge-card>
+
+
+  <forge-card class="cs-gpt-card">
+    <div class="margin">
+      <span class="forge-typography--body1"> Variable Table </span>
+    </div>
+
+    <forge-table
+      [columnConfigurations]="columnConfigurations"
+      [data]="data">
+    </forge-table>
+  </forge-card>
+
+  <forge-card class="cs-gpt-card">
+    <div class="margin">
+      <span class="forge-typography--body1"> ChatGPT </span>
+    </div>
+
+    <div>
+      <span class="forge-typography--body2"> Final Input </span>
+    </div>
+    <forge-text-field class="cs-gpt-text margin">
+      <code>
+        <textarea [rows]="10"> {{ gptInput }} </textarea>
+      </code>
+    </forge-text-field>
+
+
+    <div>
+      <span class="forge-typography--body2"> Response </span>
+    </div>
+    <forge-skeleton list-item *ngIf="gptFetching && gptFetched"></forge-skeleton>
+    <forge-text-field class="cs-gpt-text margin" *ngIf="!gptFetching && gptFetched">
+      <code>
+        <textarea [rows]="25"> {{ gptOutput }} </textarea>
+      </code>
+    </forge-text-field>
+
+    <div style="display: flex" *ngIf="!gptFetching && gptFetched">
+      <forge-button class='button' style="margin-left: auto;" [type]="'raised'" (click)="smartify()">
+        <button type="button">Auto Unmask</button>
+      </forge-button>
+    </div>
+  </forge-card>
+</div>

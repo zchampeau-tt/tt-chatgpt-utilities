@@ -1,0 +1,48 @@
+<forge-toolbar>
+  <span class="forge-typography--title"> Sample Code </span>
+</forge-toolbar>
+
+<div class="cs-gpt-content">
+  <forge-card role="button" class="cs-gpt-card">
+    <forge-expansion-panel>
+      <div slot="header" style="display: flex;" >
+        <span class="forge-typography--body1"> Example 1 </span>
+        <forge-open-icon style="margin-left: auto"></forge-open-icon>
+      </div>
+
+      <forge-text-field class="cs-gpt-text margin" required>
+        <code>
+          <textarea [rows]="10" [(ngModel)]="examples[0]"></textarea>
+        </code>
+      </forge-text-field>
+
+      <div style="display: flex">
+        <forge-button class='button' style="margin-left: auto" [type]="'raised'" (click)="copy(0)">
+          <button type="button">Copy</button>
+        </forge-button>
+      </div>
+    </forge-expansion-panel>
+  </forge-card>
+
+  <forge-card role="button" class="cs-gpt-card">
+    <forge-expansion-panel>
+      <div slot="header" style="display: flex;" >
+        <span class="forge-typography--body1"> Example 2 </span>
+        <forge-open-icon style="margin-left: auto"></forge-open-icon>
+      </div>
+
+      <forge-text-field class="cs-gpt-text margin" required>
+        <code>
+          <textarea [rows]="10" [(ngModel)]="examples[1]"></textarea>
+        </code>
+      </forge-text-field>
+
+      <div style="display: flex">
+        <forge-button class='button' style="margin-left: auto" [type]="'raised'" (click)="copy(1)">
+          <button type="button">Copy</button>
+        </forge-button>
+      </div>
+    </forge-expansion-panel>
+  </forge-card>
+
+</div>
